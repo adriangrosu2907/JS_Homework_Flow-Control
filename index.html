@@ -11,7 +11,7 @@
   <body>
     <div class="formularTaxe">
       <h1>Calculator Taxe Autovehicule</h1>
-      <form method="GET" id="form" target="_self">
+      <form action="http://127.0.0.1:5500/JS_Homework_Flow-Control/index.html"  method="get">
         <div>
           <label for="vehicleType">Alegeti tipul autovehiculului:</label>
           <select name="vehicleType" id="vehicle">
@@ -26,7 +26,7 @@
           <label for="vehicleCC">Introduceti capacitate cilindrica:</label>
           <input type="number" name="vehicleCC" id="vehicleCC" required />
         </div>
-        <button type="button" onclick="submitForm()">Submit</button>
+        <button id="submitButton" type="button">Submit</button>
       </form>
     </div>
   </body>

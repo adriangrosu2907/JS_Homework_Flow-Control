@@ -32,7 +32,7 @@ function carTaxesCalc() {
     }
   
     alert(
-      'Your taxes according to you vehicule type are: ' + vehicleTaxes + ' RON.'
+      'Your taxes according to your vehicule type are: ' + vehicleTaxes + ' RON.'
     );
   }
   
@@ -72,14 +72,20 @@ function carTaxesCalc() {
     // );
   }
   
-  console.log(carTaxesCalcV2('Autoturism', 2000));
+  console.log(carTaxesCalcV2('Autoturism', 2500));
   
+  
+
   function submitForm() {
-    var typeValue = document.querySelector('input[name="vehicleType"]').value;
-    var CCValue = document.querySelector('input[name="vehicleCC"]').value;
+    var typeValue = document.getElementById("vehicleType").value;
+    var CCValue = document.getElementById("vehicleCC").value;
     var taxesValue = carTaxesCalcV2(typeValue, CCValue);
     console.log(taxesValue);
     // alert('Your taxes according to you vehicule type are: ' + taxes + ' RON.');
   }
+
+  var button = document.getElementById("submitButton");
+  button.addEventListener("click", submitForm())
+
   
-  //bag pula
+  
