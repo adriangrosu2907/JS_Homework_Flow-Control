@@ -11,22 +11,19 @@
   <body>
     <div class="formularTaxe">
       <h1>Calculator Taxe Autovehicule</h1>
-      <form action="http://127.0.0.1:5500/JS_Homework_Flow-Control/index.html"  method="get">
-        <div>
-          <label for="vehicleType">Alegeti tipul autovehiculului:</label>
-          <select name="vehicleType" id="vehicle">
-            <option value="Motocicleta">Motocicleta</option>
-            <option value="Autoturism">Autoturism</option>
-            <option value="Autocar">Autocar</option>
-            <option value="Tractor">Tractor</option>
-            <option value="Alt vehicul">Alt vehicul</option>
-          </select>
-        </div>
-        <div>
-          <label for="vehicleCC">Introduceti capacitate cilindrica:</label>
-          <input type="number" name="vehicleCC" id="vehicleCC" required />
-        </div>
-        <button id="submitButton" type="button">Submit</button>
+      <form id="formAuto">
+        <label for="vehicleType">Alegeti tipul autovehiculului:</label>
+        <select name="vehicleType" id="vehicleSelect">
+          <option value="Motocicleta">Motocicleta</option>
+          <option value="Autoturism">Autoturism</option>
+          <option value="Autocar">Autocar</option>
+          <option value="Tractor">Tractor</option>
+          <option value="Alt vehicul">Alt vehicul</option>
+        </select><br>
+
+        <label for="vehicleCC">Introduceti capacitate cilindrica:</label>
+        <input type="number" name="vehicleCC" id="vehicleCC" required />
+        <button type="button" id="myButton">Sumbit</button>
       </form>
     </div>
   </body>

@@ -74,18 +74,18 @@ function carTaxesCalc() {
   
   console.log(carTaxesCalcV2('Autoturism', 2500));
   
-  
 
-  function submitForm() {
-    var typeValue = document.getElementById("vehicleType").value;
-    var CCValue = document.getElementById("vehicleCC").value;
-    var taxesValue = carTaxesCalcV2(typeValue, CCValue);
-    console.log(taxesValue);
-    // alert('Your taxes according to you vehicule type are: ' + taxes + ' RON.');
-  }
+document.getElementById("myButton").onclick = function(){
 
-  var button = document.getElementById("submitButton");
-  button.addEventListener("click", submitForm())
+  var typeValue = document.getElementById("vehicleSelect").value;
+  console.log(typeValue)
 
+  var CCValue = document.getElementById("vehicleCC").value;
+  console.log(CCValue)
+
+  var taxesValue = carTaxesCalcV2(typeValue, CCValue);
+  console.log(taxesValue)
+  alert('Your taxes according to you vehicule type are: ' + taxesValue + ' RON.')
+}
   
   
