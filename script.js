@@ -82,3 +82,4 @@ function carTaxesCalc() {
     // alert('Your taxes according to you vehicule type are: ' + taxes + ' RON.');
   }
   
+  //bag pula
