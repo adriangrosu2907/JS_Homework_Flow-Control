@@ -1,34 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <div class="formularTaxe">
-      <h1>Calculator Taxe Autovehicule</h1>
-      <form method="GET" id="form" target="_self">
-        <div>
-          <label for="vehicleType">Alegeti tipul autovehiculului:</label>
-          <select name="vehicleType" id="vehicle">
-            <option value="Motocicleta">Motocicleta</option>
-            <option value="Autoturism">Autoturism</option>
-            <option value="Autocar">Autocar</option>
-            <option value="Tractor">Tractor</option>
-            <option value="Alt vehicul">Alt vehicul</option>
-          </select>
-        </div>
-        <div>
-          <label for="vehicleCC">Introduceti capacitate cilindrica:</label>
-          <input type="number" name="vehicleCC" id="vehicleCC" required />
-        </div>
-        <button type="button" onclick="submitForm()">Submit</button>
-      </form>
-    </div>
-  </body>
-</html>
-
+function carTaxesCalc() {
+    let vehicleType = prompt('Please choose the type of your vehicle:');
+    let vehicleCC = prompt(
+      'Please enter the cilindrical capacity of your vehicle:'
+    );
+    let vehicleTaxes = 0;
+  
+    if (vehicleType === 'Motocicleta') {
+      if (vehicleCC <= 1600) {
+        vehicleTaxes = (vehicleCC / 200) * 8;
+      } else {
+        vehicleTaxes = (vehicleCC / 200) * 9;
+      }
+    } else if (vehicleType === 'Autoturism') {
+      if (vehicleCC <= 1600) {
+        vehicleTaxes = (vehicleCC / 200) * 8;
+      } else if (vehicleCC <= 2000) {
+        vehicleTaxes = (vehicleCC / 200) * 22;
+      } else if (vehicleCC <= 2600) {
+        vehicleTaxes = (vehicleCC / 200) * 85;
+      } else if (vehicleCC <= 3000) {
+        vehicleTaxes = (vehicleCC / 200) * 171;
+      } else {
+        vehicleTaxes = (vehicleCC / 200) * 345;
+      }
+    } else if (vehicleType === 'Autocar') {
+      vehicleTaxes = (vehicleCC / 200) * 28;
+    } else if (vehicleType === 'Alte vehicule') {
+      vehicleTaxes = (vehicleCC / 200) * 34;
+    } else if (vehicleType === 'Tractor') {
+      vehicleTaxes = (vehicleCC / 200) * 22;
+    }
+  
+    alert(
+      'Your taxes according to you vehicule type are: ' + vehicleTaxes + ' RON.'
+    );
+  }
+  
+  // carTaxesCalc();
+  
+  function carTaxesCalcV2(vehicleType, vehicleCC) {
+    let vehicleTaxes = 0;
+  
+    if (vehicleType === 'Motocicleta') {
+      if (vehicleCC <= 1600) {
+        vehicleTaxes = (vehicleCC / 200) * 8;
+      } else {
+        vehicleTaxes = (vehicleCC / 200) * 9;
+      }
+    } else if (vehicleType === 'Autoturism') {
+      if (vehicleCC <= 1600) {
+        vehicleTaxes = (vehicleCC / 200) * 8;
+      } else if (vehicleCC <= 2000) {
+        vehicleTaxes = (vehicleCC / 200) * 22;
+      } else if (vehicleCC <= 2600) {
+        vehicleTaxes = (vehicleCC / 200) * 85;
+      } else if (vehicleCC <= 3000) {
+        vehicleTaxes = (vehicleCC / 200) * 171;
+      } else {
+        vehicleTaxes = (vehicleCC / 200) * 345;
+      }
+    } else if (vehicleType === 'Autocar') {
+      vehicleTaxes = (vehicleCC / 200) * 28;
+    } else if (vehicleType === 'Alte vehicule') {
+      vehicleTaxes = (vehicleCC / 200) * 34;
+    } else if (vehicleType === 'Tractor') {
+      vehicleTaxes = (vehicleCC / 200) * 22;
+    }
+    return vehicleTaxes;
+    // alert(
+    //   'Your taxes according to you vehicule type are: ' + vehicleTaxes + ' RON.'
+    // );
+  }
+  
+  console.log(carTaxesCalcV2('Autoturism', 2000));
+  
+  function submitForm() {
+    var typeValue = document.querySelector('input[name="vehicleType"]').value;
+    var CCValue = document.querySelector('input[name="vehicleCC"]').value;
+    var taxesValue = carTaxesCalcV2(typeValue, CCValue);
+    console.log(taxesValue);
+    // alert('Your taxes according to you vehicule type are: ' + taxes + ' RON.');
+  }
+  
